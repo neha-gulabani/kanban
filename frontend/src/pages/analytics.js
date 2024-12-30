@@ -15,7 +15,7 @@ const Analytics = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/task/analytics', {
+        axios.get('https://kanban-uihq.onrender.com0/api/task/analytics', {
             headers: {
                 Authorization: `Bearer ${sessionStorage.getItem('token')}`
             }

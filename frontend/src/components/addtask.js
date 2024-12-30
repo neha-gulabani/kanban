@@ -26,7 +26,7 @@ const AddTaskModal = ({ isOpen, onClose, onSave }) => {
 
     useEffect(() => {
         if (isOpen) {
-            axios.get('http://localhost:5000/api/task/fetchUsers')
+            axios.get('https://kanban-uihq.onrender.com0/api/task/fetchUsers')
                 .then(response => setUsers(response.data))
                 .catch(error => console.error('Error fetching users:', error));
         }
@@ -69,7 +69,7 @@ const AddTaskModal = ({ isOpen, onClose, onSave }) => {
             };
             let newTask;
 
-            axios.post('http://localhost:5000/api/task/addTask', taskData, {
+            axios.post('https://kanban-uihq.onrender.com0/api/task/addTask', taskData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`,
                 },

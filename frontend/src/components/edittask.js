@@ -41,7 +41,7 @@ const EditTaskModal = ({ isOpen, onClose, taskData, onUpdate }) => {
             setAssignedTo(primaryAssignee ? primaryAssignee.email : user?.email || '');
         }
 
-        axios.get('http://localhost:5000/api/task/fetchUsers')
+        axios.get('https://kanban-uihq.onrender.com0/api/task/fetchUsers')
             .then(response => {
                 console.log('res edit', response.data)
 
@@ -75,7 +75,7 @@ const EditTaskModal = ({ isOpen, onClose, taskData, onUpdate }) => {
             };
             console.log('updated task:', updatedTask)
 
-            axios.put(`http://localhost:5000/api/task/editTask/${taskData._id}`, updatedTask, {
+            axios.put(`https://kanban-uihq.onrender.com0/api/task/editTask/${taskData._id}`, updatedTask, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`
                 },

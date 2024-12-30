@@ -55,7 +55,7 @@ const MainPage = () => {
     }, []);
 
     const fetchTasks = () => {
-        axios.get('http://localhost:5000/api/task/tasks', {
+        axios.get('https://kanban-uihq.onrender.com0/api/task/tasks', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

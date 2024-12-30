@@ -12,7 +12,7 @@ const AddPeopleModal = ({ isOpen, onClose, tasks }) => {
             const token = sessionStorage.getItem('token');
             setIsSaving(true);
             const response = await axios.post(
-                'http://localhost:5000/api/task/assignTasksToUser',
+                'https://kanban-uihq.onrender.com0/api/task/assignTasksToUser',
                 { email, tasks },
                 {
                     headers: {

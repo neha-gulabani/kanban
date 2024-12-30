@@ -59,7 +59,7 @@ const KanbanTask = ({ task, isCollapsed, toggleChecklistItem, onStatusChange, on
         try {
 
             setTask((prevTasks) => prevTasks.filter((task) => task._id !== tasks._id))
-            await axios.delete(`http://localhost:5000/api/task/deleteTask/${tasks._id}`, {
+            await axios.delete(`https://kanban-uihq.onrender.com0/api/task/deleteTask/${tasks._id}`, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }

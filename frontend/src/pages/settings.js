@@ -20,7 +20,7 @@ const Settings = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:5000/api/auth/profile', {
+        axios.get('https://kanban-uihq.onrender.com0/api/auth/profile', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -79,7 +79,7 @@ const Settings = () => {
         try {
 
 
-            const response = await axios.put('http://localhost:5000/api/auth/update', {
+            const response = await axios.put('https://kanban-uihq.onrender.com0/api/auth/update', {
                 name,
                 email,
                 oldPassword,

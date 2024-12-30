@@ -54,7 +54,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
     useEffect(() => {
         const fetchColumns = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/column/columns', {
+                const response = await axios.get('https://kanban-uihq.onrender.com0/api/column/columns', {
                     headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
                 });
 
@@ -131,7 +131,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
 
             // Update backend
             const response = await axios.put(
-                `http://localhost:5000/api/task/updateTaskStatus/${draggableId}`,
+                `https://kanban-uihq.onrender.com0/api/task/updateTaskStatus/${draggableId}`,
                 {
                     status: destination.droppableId,
                     position: destination.index
@@ -158,7 +158,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
     const handleStatusChange = async (taskId, newStatus) => {
         try {
             const response = await axios.put(
-                `http://localhost:5000/api/task/updateTaskStatus/${taskId}`,
+                `https://kanban-uihq.onrender.com0/api/task/updateTaskStatus/${taskId}`,
                 { status: newStatus },
                 {
                     headers: {
@@ -185,7 +185,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
 
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/column/columns',
+                'https://kanban-uihq.onrender.com0/api/column/columns',
                 { name: newColumnName },
                 {
                     headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
@@ -220,7 +220,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
 
         try {
             await axios.put(
-                `http://localhost:5000/api/column/columns/${columnId}`,
+                `https://kanban-uihq.onrender.com0/api/column/columns/${columnId}`,
                 { name: newName },
                 {
                     headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
@@ -249,7 +249,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
         try {
 
             await axios.delete(
-                `http://localhost:5000/api/column/columns/${columnId}`,
+                `https://kanban-uihq.onrender.com0/api/column/columns/${columnId}`,
                 {
                     headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
                 }
@@ -288,7 +288,7 @@ const KanbanBoard = ({ tasks: initialTasks, onSave, onStatusChange, fetchTask })
         );
         console.log('checklist', tasks)
 
-        axios.put(`http://localhost:5000/api/task/updateChecklist/${taskId}`, {
+        axios.put(`https://kanban-uihq.onrender.com0/api/task/updateChecklist/${taskId}`, {
             checklistIndex,
             completed: updatedChecklist[checklistIndex].completed
         }, {

@@ -18,7 +18,7 @@ const TaskSharePage = () => {
             try {
                 // Fetch task details
                 const taskResponse = await axios.get(
-                    `http://localhost:5000/api/task/${taskId}`,
+                    `https://kanban-uihq.onrender.com0/api/task/${taskId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${sessionStorage.getItem('token')}`
@@ -29,7 +29,7 @@ const TaskSharePage = () => {
 
                 // Fetch user's columns
                 const columnsResponse = await axios.get(
-                    'http://localhost:5000/api/columns',
+                    'https://kanban-uihq.onrender.com0/api/columns',
                     {
                         headers: {
                             Authorization: `Bearer ${sessionStorage.getItem('token')}`
@@ -55,7 +55,7 @@ const TaskSharePage = () => {
     const syncColumns = async (targetUserId) => {
         try {
             await axios.post(
-                'http://localhost:5000/api/columns/sync-columns',
+                'https://kanban-uihq.onrender.com0/api/columns/sync-columns',
                 {
                     targetUserId,
                     columns
@@ -76,7 +76,7 @@ const TaskSharePage = () => {
         setIsSharing(true);
         try {
             const response = await axios.post(
-                `http://localhost:5000/api/task/share/${taskId}`,
+                `https://kanban-uihq.onrender.com0/api/task/share/${taskId}`,
                 { userEmail: email },
                 {
                     headers: {

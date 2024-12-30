@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:5000', {
+const socket = io('https://kanban-uihq.onrender.com0', {
     transports: ['websocket'], // Ensure WebSocket transport
     reconnection: true, // Enable automatic reconnection
     reconnectionAttempts: 5, // Limit retries
